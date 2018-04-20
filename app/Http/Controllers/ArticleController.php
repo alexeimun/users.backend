@@ -2,38 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\AsesoresRepository;
+use App\Repositories\ArticleRepository;
 use Illuminate\Http\Request;
 
-class AsesoresController extends Controller {
+class ArticleController extends Controller {
 
-    protected $asesores;
+    protected $articles;
     protected $request;
 
-    public function __construct(AsesoresRepository $asesores, Request $request) {
-        $this->asesores = $asesores;
+    public function __construct(ArticleRepository $articles, Request $request) {
+        $this->articles = $articles;
         $this->request = $request;
     }
 
     public function show() {
-        $data = $this->asesores->all();
+        $data = $this->articles->all();
         return response()->json($data);
     }
 
     public function create() {
-        $data = $this->asesores->create($this->request->input());
+        $data = $this->articles->create($this->request->input());
 
         return response()->json($data);
     }
 
     public function update($id) {
-        $data = $this->asesores->update($id, $this->request->input());
+        $data = $this->articles->update($id, $this->request->input());
 
         return response()->json($data);
     }
 
     public function destroy($id) {
-        $this->asesores->delete($id);
+        $this->articles->delete($id);
         return response()->json(['data' => 'destroyed!']);
     }
 

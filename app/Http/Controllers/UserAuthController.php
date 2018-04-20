@@ -99,7 +99,7 @@ class UserAuthController extends Controller {
 
     public function courses() {
 
-        $data = $this->userAuth->courses()->orderBy('updated_at', 'desc')->get();
+        $data = $this->userAuth->courses()->latest('updated_at')->get();
 
         return response()->json(['data' => $data]);
     }
@@ -114,7 +114,7 @@ class UserAuthController extends Controller {
 
         $var->touch();
 
-        return response()->json(['data' => $this->userAuth->courses()->orderBy('updated_at', 'asc')->get()]);
+        return response()->json(['data' => $this->userAuth->courses()->oldest('updated_at')->get()]);
     }
 
     public function login(Request $request) {

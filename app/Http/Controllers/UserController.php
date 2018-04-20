@@ -15,14 +15,14 @@ class UserController extends Controller {
 
     public function show($id) {
 
-        $data = $this->users->findOrFail($id)->load('person');
+        $data = $this->users->findOrFail($id);
         return response()->json($data);
     }
 
     public function all() {
-
-        $data = $this->users->all();
-        return response()->json(['data' => $data]);
+        //$data = $this->users->all();
+        $data = $this->users->test();
+        return response()->json($data);
     }
 
     /**

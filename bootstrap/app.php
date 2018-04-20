@@ -104,7 +104,6 @@ $app->register(App\Providers\APIServiceProvider::class);
 $app->register(App\Providers\LangServiceProvider::class);
 
 $app->register(Barryvdh\Cors\LumenServiceProvider::class);
-$app->register(Appzcoder\LumenRoutesList\RoutesCommandServiceProvider::class);
 
 $app->register(Illuminate\Mail\MailServiceProvider::class);
 

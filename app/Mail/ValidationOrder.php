@@ -48,7 +48,7 @@ class ValidationOrder extends Mailable
         else {
             $subject = 'Confirmación de la cuenta';
         }
-        return $this->view('emails.verify', ['lang' => $l])
+        return $this-> view('emails.verify', ['lang' => $l])
             ->subject($subject);
 
     }

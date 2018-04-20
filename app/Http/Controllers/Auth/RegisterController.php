@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Mail\Mailers;
-use App\Repositories\ClientesRepository;
+use App\Repositories\UsersRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class RegisterController extends Controller {
     /**
      * The persons repository.
      *
-     * @var \App\Repositories\ClientesRepository
+     * @var \App\Repositories\UsersRepository
      */
     protected $persons;
 
@@ -28,11 +28,11 @@ class RegisterController extends Controller {
     /**
      * Create a new controller instance.
      *
-     * @param \App\Repositories\ClientesRepository $persons
+     * @param \App\Repositories\UsersRepository $persons
      * @param \App\Repositories\Contracts\UserRepositoryInterface $users
      * @return void
      */
-    public function __construct(ClientesRepository $persons, UserRepository $users) {
+    public function __construct(UsersRepository $persons, UserRepository $users) {
 
         $this->persons = $persons;
         $this->users = $users;

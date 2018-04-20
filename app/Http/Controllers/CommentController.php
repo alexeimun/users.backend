@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\CasosRepository;
+use App\Repositories\CommentRepository;
 use Illuminate\Http\Request;
 
 class CasosController extends Controller {
@@ -10,7 +10,7 @@ class CasosController extends Controller {
     protected $casos;
     protected $request;
 
-    public function __construct(CasosRepository $casos, Request $request) {
+    public function __construct(CommentRepository $casos, Request $request) {
         $this->casos = $casos;
         $this->request = $request;
     }

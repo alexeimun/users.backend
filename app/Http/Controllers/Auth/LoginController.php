@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\AsesoresRepository;
+use App\Repositories\ArticleRepository;
 use App\Repositories\UserRepository;
 use Illuminate\Http\Request;
 use Laravel\Passport\Http\Controllers\HandlesOAuthErrors;
@@ -14,7 +14,7 @@ class LoginController extends Controller {
     protected $asesores;
     protected $users;
 
-    public function __construct(AsesoresRepository $asesores, UserRepository $users) {
+    public function __construct(ArticleRepository $asesores, UserRepository $users) {
         $this->asesores = $asesores;
         $this->users = $users;
     }
